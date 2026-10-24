@@ -5,7 +5,6 @@ services:
     name: home
     runtime: static
     staticPublishPath: public
-    domains: [florian-piel.space, www.florian-piel.space]
     routes:
       - type: rewrite
         source: /tracker/*
