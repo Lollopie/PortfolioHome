@@ -1,0 +1,33 @@
+# Home page, and the gateway for every app on the domain. Static sites never sleep, so this
+# front door stays fast even while the apps behind it are spun down on the free tier.
+services:
+  - type: web
+    name: home
+    runtime: static
+    staticPublishPath: public
+    domains:
+      - example.com # TODO: your domain; add www.example.com too if you want it
+    routes:
+      # tracker-web serves everything under /tracker/ itself, including forwarding /tracker/api/* to its API,
+      # so the path is passed through unchanged.
+      - type: rewrite
+        source: /tracker/*
+        destination: https://tracker-web-y2tx.onrender.com/tracker/*
+      # TODO: the existing app's path and Render URL.
+      - type: rewrite
+        source: /OTHER/*
+        destination: https://OTHER.onrender.com/*
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      # Only on the home page itself: the apps behind the rewrites bring their own policies.
+      - path: /
+        name: Content-Security-Policy
+        value: "default-src 'self'; frame-ancestors 'none'"
+      - path: /index.html
+        name: Content-Security-Policy
+        value: "default-src 'self'; frame-ancestors 'none'"

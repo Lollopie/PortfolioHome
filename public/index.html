@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A home page linking to my projects" />
+    <title>Projects</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Projects</h1>
+        <p class="lead">Pick an app to open. Both run on free hosting, so the first visit after a quiet spell can take up to a minute while the server wakes up.</p>
+      </header>
+
+      <ul class="apps">
+        <li>
+          <a class="card" href="/tracker/">
+            <span class="status" data-health="/tracker/api/actuator/health" data-state="checking">
+              <span class="dot" aria-hidden="true"></span><span class="label">Checking…</span>
+            </span>
+            <h2>Job Tracker</h2>
+            <p>Track job applications from saved to offer, with a status workflow and full history.</p>
+            <span class="open">Open Job Tracker →</span>
+          </a>
+        </li>
+        <li>
+          <!-- TODO: replace /OTHER/ with the existing app's path, and its health URL with one it actually serves. -->
+          <a class="card" href="/OTHER/">
+            <span class="status" data-health="/OTHER/api/health" data-state="checking">
+              <span class="dot" aria-hidden="true"></span><span class="label">Checking…</span>
+            </span>
+            <h2>Other app</h2>
+            <p>A short description of the existing app.</p>
+            <span class="open">Open Other app →</span>
+          </a>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>
