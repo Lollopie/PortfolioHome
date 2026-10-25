@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "title": "Florian Piel · Full-stack developer",
+    "description": "Florian Piel, computer science graduate from TU Berlin. Full-stack web apps and AI tooling, shipped with CI/CD, tests and Docker."
+  },
+  "nav": {
+    "skip": "Skip to content",
+    "label": "Sections",
+    "projects": "Projects",
+    "skills": "Skills",
+    "education": "Education",
+    "contact": "Contact",
+    "switchLang": "Deutsch",
+    "theme": "Switch between light and dark mode"
+  },
+  "hero": {
+    "role": "Full-stack developer building web apps and AI tools.",
+    "pitch": "Computer science graduate from TU Berlin. I build full-stack web apps and AI tooling such as agents and MCP servers, and ship them with CI/CD, tests and Docker.",
+    "viewProjects": "View projects",
+    "downloadCv": "Download CV",
+    "location": "Based near Berlin · open to full-stack, software and AI tooling roles"
+  },
+  "status": {
+    "checking": "Checking…",
+    "waking": "Waking up…",
+    "online": "Online",
+    "offline": "Unavailable"
+  },
+  "projects": {
+    "title": "Projects",
+    "lead": "Both apps run live on this domain. They use free hosting, so the first visit after a quiet spell can take up to a minute while the server wakes up. This page starts waking them as soon as it loads.",
+    "stack": "Tech stack",
+    "openLive": "Open live app →",
+    "omnistore": {
+      "kind": "Full-stack",
+      "summary": "B2B inventory management for teams, with role-based access, invites and Stripe subscriptions.",
+      "highlights": [
+        "NestJS backend, React frontend and PostgreSQL database",
+        "CI/CD with GitHub Actions: automated tests and automatic deployment to Render",
+        "MCP server that lets an AI model read the database, test migrations in an isolated Docker container and deploy them after human approval",
+        "Stripe subscriptions: the subscription workflow built by hand, cancellation and plan changes added with AI agents"
+      ]
+    },
+    "tracker": {
+      "name": "Application Tracker",
+      "kind": "Backend",
+      "summary": "Track job applications from saved to offer, with a status workflow and full history.",
+      "highlights": [
+        "REST API with session-based authentication, CSRF protection and per-user data isolation",
+        "Status transitions with optimistic locking, plus filtering and pagination",
+        "Integration tests in a GitHub Actions pipeline that publishes Docker images"
+      ]
+    }
+  },
+  "more": {
+    "title": "More work",
+    "security": {
+      "name": "International security contest",
+      "text": "Built a web service with deliberately vulnerable JavaScript endpoints and a Python checker, then found and exploited vulnerabilities in other teams' services.",
+      "tag": "Security"
+    },
+    "thesis": {
+      "name": "Bachelor thesis",
+      "text": "How the output function (SoftMax or Sigmoid) affects accuracy and uncertainty in neural networks that segment Earth observation imagery. Accuracy was comparable, and calibrated SoftMax networks were not overconfident.",
+      "read": "Read the thesis (PDF) →"
+    },
+    "os": {
+      "name": "Operating systems lab",
+      "text": "A small operating system for the Raspberry Pi, written in C and assembler."
+    },
+    "algo": {
+      "name": "Algorithms lab",
+      "text": "An algorithm that swaps two image segments while keeping the contrast along their borders as low as possible."
+    },
+    "frontend": {
+      "name": "Frontend course",
+      "text": "Team projects in groups of three, ending with Whisker's Warehouse Leap, a browser jumping game.",
+      "play": "Play the game →"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "languages": "Languages and frameworks",
+    "tools": "Tools and platforms",
+    "spoken": "Spoken languages",
+    "spokenList": ["German (native)", "English (fluent)", "Spanish (basic)"]
+  },
+  "education": {
+    "title": "Education",
+    "bsc": "B.Sc. Computer Science",
+    "grade": "Grade"
+  },
+  "contact": {
+    "title": "Contact",
+    "lead": "I'm open to new roles. Email is the quickest way to reach me."
+  },
+  "footer": {
+    "text": "Hand-written HTML and CSS, hosted on Render.",
+    "source": "Source code"
+  }
+}

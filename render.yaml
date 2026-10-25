@@ -4,6 +4,8 @@ services:
   - type: web
     name: home
     runtime: static
+    # Generates public/index.html (English) and public/de/index.html (German) from src/ and i18n/.
+    buildCommand: node build.mjs
     staticPublishPath: public
     domains: [florian-piel.space, www.florian-piel.space]
     routes:
@@ -13,6 +15,13 @@ services:
       - type: rewrite
         source: /omnistore/*
         destination: https://omnistore-react.onrender.com/omnistore/*
+      # The game loads its files by relative path, so it needs the trailing slash.
+      - type: redirect
+        source: /game
+        destination: /game/
+      - type: rewrite
+        source: /game/*
+        destination: https://whiskers-warehouse-leap.onrender.com/*
     headers:
       - path: /*
         name: X-Content-Type-Options
@@ -20,10 +29,27 @@ services:
       - path: /*
         name: Referrer-Policy
         value: strict-origin-when-cross-origin
-      # Only on the home page itself: the apps behind the rewrites bring their own policies.
+      # Only on the home pages themselves: the apps behind the rewrites bring their own policies.
+      # connect-src lets app.js ping the OmniStore API, which lives on its own subdomain.
       - path: /
         name: Content-Security-Policy
-        value: "default-src 'self'; frame-ancestors 'none'"
+        value: "default-src 'self'; connect-src 'self' https://api.florian-piel.space; frame-ancestors 'none'"
       - path: /index.html
         name: Content-Security-Policy
-        value: "default-src 'self'; frame-ancestors 'none'"
+        value: "default-src 'self'; connect-src 'self' https://api.florian-piel.space; frame-ancestors 'none'"
+      - path: /de/
+        name: Content-Security-Policy
+        value: "default-src 'self'; connect-src 'self' https://api.florian-piel.space; frame-ancestors 'none'"
+      - path: /de/index.html
+        name: Content-Security-Policy
+        value: "default-src 'self'; connect-src 'self' https://api.florian-piel.space; frame-ancestors 'none'"
+
+  # Whisker's Warehouse Leap, the jumping game from the frontend course. Plain static files
+  # with no build step, served on this domain under /game/.
+  - type: web
+    name: whiskers-warehouse-leap
+    runtime: static
+    repo: https://github.com/Lollopie/Whiskers-Warehouse-Leap
+    branch: main
+    buildCommand: echo "No build step"
+    staticPublishPath: .
