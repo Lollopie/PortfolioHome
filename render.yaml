@@ -15,10 +15,6 @@ services:
       - type: rewrite
         source: /omnistore/*
         destination: https://omnistore-react.onrender.com/omnistore/*
-      # The game loads its files by relative path, so it needs the trailing slash.
-      - type: redirect
-        source: /game
-        destination: /game/
       - type: rewrite
         source: /game/*
         destination: https://whiskers-warehouse-leap.onrender.com/*
