@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="{{lang}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{meta.title}}</title>
+    <meta name="description" content="{{meta.description}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{meta.title}}" />
+    <meta property="og:description" content="{{meta.description}}" />
+    <meta property="og:url" content="https://florian-piel.space{{path}}" />
+    <link rel="canonical" href="https://florian-piel.space{{path}}" />
+    <link rel="alternate" hreflang="en" href="https://florian-piel.space/" />
+    <link rel="alternate" hreflang="de" href="https://florian-piel.space/de/" />
+    <link rel="alternate" hreflang="x-default" href="https://florian-piel.space/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <!-- Not deferred: sets the saved theme before the first paint so the page doesn't flash. -->
+    <script src="/theme.js"></script>
+    <script src="/app.js" defer></script>
+  </head>
+  <body data-checking="{{status.checking}}" data-waking="{{status.waking}}" data-online="{{status.online}}" data-offline="{{status.offline}}">
+    <a class="skip" href="#main">{{nav.skip}}</a>
+
+    <header class="nav">
+      <div class="nav-inner">
+        <a class="brand" href="{{path}}">FP</a>
+        <nav aria-label="{{nav.label}}">
+          <ul>
+            <li><a href="#projects">{{nav.projects}}</a></li>
+            <li><a href="#skills">{{nav.skills}}</a></li>
+            <li><a href="#education">{{nav.education}}</a></li>
+            <li><a href="#contact">{{nav.contact}}</a></li>
+          </ul>
+        </nav>
+        <div class="nav-tools">
+          <a class="lang" href="{{altPath}}" hreflang="{{altLang}}" lang="{{altLang}}">{{nav.switchLang}}</a>
+          <button class="theme-toggle" type="button" aria-label="{{nav.theme}}" title="{{nav.theme}}">
+            <span aria-hidden="true">◐</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="terminal" aria-hidden="true"><span class="prompt">$</span> curl florian-piel.space/healthz <span class="ok">→ online</span></p>
+        <h1 id="hero-title">Florian Piel</h1>
+        <p class="role">{{hero.role}}</p>
+        <p class="pitch">{{hero.pitch}}</p>
+        <div class="actions">
+          <a class="button primary" href="#projects">{{hero.viewProjects}}</a>
+          {{cvButton}}
+          <a class="button" href="https://github.com/Lollopie" rel="me">GitHub</a>
+          <a class="button" href="https://www.linkedin.com/in/florian-piel-629097404/" rel="me">LinkedIn</a>
+        </div>
+        <p class="location">{{hero.location}}</p>
+      </section>
+
+      <section id="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title">{{projects.title}}</h2>
+        <p class="section-lead">{{projects.lead}}</p>
+
+        <ul class="featured">
+          <li>
+            <article class="card">
+              <div class="card-top">
+                <span class="status" data-health="https://api.florian-piel.space/healthz" data-state="checking">
+                  <span class="dot" aria-hidden="true"></span><span class="label">{{status.checking}}</span>
+                </span>
+                <span class="kind">{{projects.omnistore.kind}}</span>
+              </div>
+              <h3>OmniStore</h3>
+              <p class="summary">{{projects.omnistore.summary}}</p>
+              <ul class="highlights">{{projects.omnistore.highlights}}</ul>
+              <ul class="tags" aria-label="{{projects.stack}}">
+                <li>NestJS</li><li>React</li><li>TypeScript</li><li>PostgreSQL</li><li>Docker</li><li>MCP</li><li>Stripe</li>
+              </ul>
+              <div class="links">
+                <a class="open" href="/omnistore/">{{projects.openLive}}</a>
+                <a href="https://github.com/Lollopie/OmniStore">GitHub</a>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card">
+              <div class="card-top">
+                <span class="status" data-health="/tracker/api/actuator/health" data-state="checking">
+                  <span class="dot" aria-hidden="true"></span><span class="label">{{status.checking}}</span>
+                </span>
+                <span class="kind">{{projects.tracker.kind}}</span>
+              </div>
+              <h3>{{projects.tracker.name}}</h3>
+              <p class="summary">{{projects.tracker.summary}}</p>
+              <ul class="highlights">{{projects.tracker.highlights}}</ul>
+              <ul class="tags" aria-label="{{projects.stack}}">
+                <li>Java 21</li><li>Spring Boot 4</li><li>PostgreSQL 18</li><li>Docker</li><li>GitHub Actions</li>
+              </ul>
+              <div class="links">
+                <a class="open" href="/tracker/">{{projects.openLive}}</a>
+                <a href="https://github.com/Lollopie/ApplicationTracker">GitHub</a>
+              </div>
+            </article>
+          </li>
+        </ul>
+
+        <h3 class="subhead">{{more.title}}</h3>
+        <ul class="more">
+          <li class="small-card">
+            <h4>{{more.security.name}}</h4>
+            <p>{{more.security.text}}</p>
+            <ul class="tags"><li>JavaScript</li><li>Python</li><li>{{more.security.tag}}</li></ul>
+            <div class="links"><a href="https://github.com/enowars/enowars7-service-asocialnetwork">GitHub</a></div>
+          </li>
+          <li class="small-card">
+            <h4>{{more.thesis.name}}</h4>
+            <p>{{more.thesis.text}}</p>
+            <ul class="tags"><li>Python</li><li>PyTorch</li></ul>
+          </li>
+          <li class="small-card">
+            <h4>{{more.os.name}}</h4>
+            <p>{{more.os.text}}</p>
+            <ul class="tags"><li>C</li><li>Assembler</li><li>Raspberry Pi</li></ul>
+          </li>
+          <li class="small-card">
+            <h4>{{more.algo.name}}</h4>
+            <p>{{more.algo.text}}</p>
+            <ul class="tags"><li>Java</li></ul>
+          </li>
+          <li class="small-card">
+            <h4>{{more.frontend.name}}</h4>
+            <p>{{more.frontend.text}}</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <div class="links">
+              <a class="open" href="/game/">{{more.frontend.play}}</a>
+              <a href="https://github.com/Lollopie/Whiskers-Warehouse-Leap">GitHub</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="skills" aria-labelledby="skills-title">
+        <h2 id="skills-title">{{skills.title}}</h2>
+        <dl class="skills">
+          <div>
+            <dt>{{skills.languages}}</dt>
+            <dd>
+              <ul class="tags">
+                <li>TypeScript</li><li>JavaScript</li><li>NestJS</li><li>React</li><li>Java</li><li>Spring Boot</li><li>Python</li><li>PyTorch</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>{{skills.tools}}</dt>
+            <dd>
+              <ul class="tags">
+                <li>Git</li><li>GitHub Actions</li><li>PostgreSQL</li><li>Docker</li><li>Render</li><li>MCP</li><li>Linux</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>{{skills.spoken}}</dt>
+            <dd>
+              <ul class="tags">{{skills.spokenList}}</ul>
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <section id="education" aria-labelledby="education-title">
+        <h2 id="education-title">{{education.title}}</h2>
+        <ol class="timeline">
+          <li>
+            <span class="when">2020 – 2026</span>
+            <div>
+              <h3>{{education.bsc}}</h3>
+              <p>Technische Universität Berlin · {{education.grade}} 1,5</p>
+            </div>
+          </li>
+          <li>
+            <span class="when">2017 – 2020</span>
+            <div>
+              <h3>Abitur</h3>
+              <p>OSZ TIEM, Berlin · {{education.grade}} 1,2</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section id="contact" class="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">{{contact.title}}</h2>
+        <p class="section-lead">{{contact.lead}}</p>
+        <div class="actions">
+          <a class="button primary" href="mailto:f.piel@gmx.de">f.piel@gmx.de</a>
+          <a class="button" href="https://github.com/Lollopie" rel="me">GitHub</a>
+          <a class="button" href="https://www.linkedin.com/in/florian-piel-629097404/" rel="me">LinkedIn</a>
+          {{cvButton}}
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>{{footer.text}} <a href="https://github.com/Lollopie/PortfolioHome">{{footer.source}}</a></p>
+    </footer>
+  </body>
+</html>

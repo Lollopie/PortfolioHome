@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "title": "Florian Piel · Full-Stack-Entwickler",
+    "description": "Florian Piel, Informatik-Absolvent der TU Berlin. Full-Stack-Webanwendungen und KI-Tools, ausgeliefert mit CI/CD, Tests und Docker."
+  },
+  "nav": {
+    "skip": "Zum Inhalt springen",
+    "label": "Abschnitte",
+    "projects": "Projekte",
+    "skills": "Kenntnisse",
+    "education": "Ausbildung",
+    "contact": "Kontakt",
+    "switchLang": "English",
+    "theme": "Zwischen hellem und dunklem Design wechseln"
+  },
+  "hero": {
+    "role": "Full-Stack-Entwickler für Webanwendungen und KI-Tools.",
+    "pitch": "Informatik-Absolvent der TU Berlin. Ich entwickle Full-Stack-Webanwendungen und KI-Tools wie Agents und MCP-Server und bringe sie mit CI/CD, Tests und Docker in Produktion.",
+    "viewProjects": "Projekte ansehen",
+    "downloadCv": "Lebenslauf herunterladen",
+    "location": "Wohnhaft bei Berlin · offen für Stellen in Full-Stack-, Software- und KI-Entwicklung"
+  },
+  "status": {
+    "checking": "Wird geprüft…",
+    "waking": "Startet…",
+    "online": "Online",
+    "offline": "Nicht erreichbar"
+  },
+  "projects": {
+    "title": "Projekte",
+    "lead": "Beide Anwendungen laufen live auf dieser Domain. Sie nutzen kostenloses Hosting, daher kann der erste Aufruf nach einer Pause bis zu einer Minute dauern, bis der Server gestartet ist. Diese Seite weckt sie schon beim Laden.",
+    "stack": "Technologien",
+    "openLive": "Live-App öffnen →",
+    "omnistore": {
+      "kind": "Full-Stack",
+      "summary": "B2B-Lagerverwaltung für Teams, mit rollenbasierten Rechten, Einladungen und Stripe-Abonnements.",
+      "highlights": [
+        "NestJS-Backend, React-Frontend und PostgreSQL-Datenbank",
+        "CI/CD mit GitHub Actions: automatisierte Tests und automatisches Deployment auf Render",
+        "MCP-Server, über den ein KI-Modell die Datenbank lesen, Migrationen in einem isolierten Docker-Container testen und sie nach menschlicher Freigabe ausrollen kann",
+        "Stripe-Abonnements: den Abo-Ablauf von Hand umgesetzt, Kündigung und Tarifwechsel mit KI-Agents ergänzt"
+      ]
+    },
+    "tracker": {
+      "name": "Bewerbungs-Tracker",
+      "kind": "Backend",
+      "summary": "Bewerbungen von der Merkliste bis zum Angebot verfolgen, mit Status-Workflow und vollständigem Verlauf.",
+      "highlights": [
+        "REST-API mit sitzungsbasierter Authentifizierung, CSRF-Schutz und Datentrennung pro Nutzer",
+        "Statusübergänge mit Optimistic Locking, dazu Filterung und Paginierung",
+        "Integrationstests in einer GitHub-Actions-Pipeline, die Docker-Images veröffentlicht"
+      ]
+    }
+  },
+  "more": {
+    "title": "Weitere Arbeiten",
+    "security": {
+      "name": "Internationaler Security-Wettbewerb",
+      "text": "Einen Webdienst mit absichtlich verwundbaren JavaScript-Endpunkten und einem Python-Checker gebaut, dann Schwachstellen in den Diensten anderer Teams gefunden und ausgenutzt.",
+      "tag": "Security"
+    },
+    "thesis": {
+      "name": "Bachelorarbeit",
+      "text": "Wie die Ausgabefunktion (SoftMax oder Sigmoid) Genauigkeit und Unsicherheit neuronaler Netze bei der Segmentierung von Erdbeobachtungsbildern beeinflusst. Die Genauigkeit war vergleichbar, und kalibrierte SoftMax-Netze waren nicht übermäßig selbstsicher."
+    },
+    "os": {
+      "name": "Betriebssysteme-Praktikum",
+      "text": "Ein kleines Betriebssystem für den Raspberry Pi, geschrieben in C und Assembler."
+    },
+    "algo": {
+      "name": "Algorithmen-Praktikum",
+      "text": "Ein Algorithmus, der zwei Bildsegmente vertauscht und dabei den Kontrast an ihren Rändern möglichst gering hält."
+    },
+    "frontend": {
+      "name": "Frontend-Kurs",
+      "text": "Teamprojekte in Dreiergruppen, zum Abschluss Whisker's Warehouse Leap, ein Jump-and-Run-Spiel im Browser.",
+      "play": "Spiel starten →"
+    }
+  },
+  "skills": {
+    "title": "Kenntnisse",
+    "languages": "Sprachen und Frameworks",
+    "tools": "Tools und Plattformen",
+    "spoken": "Sprachen",
+    "spokenList": ["Deutsch (Muttersprache)", "Englisch (fließend)", "Spanisch (Grundkenntnisse)"]
+  },
+  "education": {
+    "title": "Ausbildung",
+    "bsc": "B.Sc. Informatik",
+    "grade": "Note"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "lead": "Ich bin offen für neue Stellen. Am schnellsten erreichen Sie mich per E-Mail."
+  },
+  "footer": {
+    "text": "Handgeschriebenes HTML und CSS, gehostet auf Render.",
+    "source": "Quellcode"
+  }
+}

@@ -3,7 +3,8 @@
 const WAKE_UP_TIMEOUT_MS = 90_000
 const RETRY_DELAY_MS = 5_000
 
-const labels = { checking: 'Checking…', waking: 'Waking up…', online: 'Online', offline: 'Unavailable' }
+// The translated label for each state sits on <body> (data-checking, data-waking, …), set by build.mjs.
+const labels = document.body.dataset
 
 function setState(badge, state) {
   badge.dataset.state = state
