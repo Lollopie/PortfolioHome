@@ -61,7 +61,8 @@
     },
     "thesis": {
       "name": "Bachelorarbeit",
-      "text": "Wie die Ausgabefunktion (SoftMax oder Sigmoid) Genauigkeit und Unsicherheit neuronaler Netze bei der Segmentierung von Erdbeobachtungsbildern beeinflusst. Die Genauigkeit war vergleichbar, und kalibrierte SoftMax-Netze waren nicht übermäßig selbstsicher."
+      "text": "Wie die Ausgabefunktion (SoftMax oder Sigmoid) Genauigkeit und Unsicherheit neuronaler Netze bei der Segmentierung von Erdbeobachtungsbildern beeinflusst. Die Genauigkeit war vergleichbar, und kalibrierte SoftMax-Netze waren nicht übermäßig selbstsicher.",
+      "read": "Arbeit lesen (PDF, Englisch) →"
     },
     "os": {
       "name": "Betriebssysteme-Praktikum",

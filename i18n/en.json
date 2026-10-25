@@ -61,7 +61,8 @@
     },
     "thesis": {
       "name": "Bachelor thesis",
-      "text": "How the output function (SoftMax or Sigmoid) affects accuracy and uncertainty in neural networks that segment Earth observation imagery. Accuracy was comparable, and calibrated SoftMax networks were not overconfident."
+      "text": "How the output function (SoftMax or Sigmoid) affects accuracy and uncertainty in neural networks that segment Earth observation imagery. Accuracy was comparable, and calibrated SoftMax networks were not overconfident.",
+      "read": "Read the thesis (PDF) →"
     },
     "os": {
       "name": "Operating systems lab",
